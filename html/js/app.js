@@ -971,7 +971,10 @@
             $.post('https://' + MenuData.ResourceName + '/update_last_selected', JSON.stringify({
                 _namespace: namespace,
                 _name: name,
-                selected: selectedIndex
+                selected: selectedIndex,
+                 data: menu.elements[
+                    movePosition(menu.elements.length, pos, -1)
+                  ],
             }));
         }
     }
@@ -1803,7 +1806,10 @@
                             $.post('https://' + MenuData.ResourceName + '/update_last_selected', JSON.stringify({
                                 _namespace: focused.namespace,
                                 _name: focused.name,
-                                selected: MenuData.pos[focused.namespace][focused.name]
+                                selected: MenuData.pos[focused.namespace][focused.name],
+                                 data: menu.elements[
+                                    movePosition(menu.elements.length, pos, -1)
+                                  ],
                             }));
 
                             MenuData.change(focused.namespace, focused.name, elem);
