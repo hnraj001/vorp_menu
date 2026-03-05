@@ -1686,7 +1686,9 @@
 
 
     window.onData = (data) => {
-
+        function movePosition(arrayLength, pos, inc) {
+            return (pos + inc + arrayLength) % arrayLength;
+        }
         switch (data.ak_menubase_action) {
 
             case "openMenu": {
