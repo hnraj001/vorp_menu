@@ -402,6 +402,7 @@ RegisterNUICallback('update_last_selected', function(data)
     local menuKey = menu.type .. "_" .. menu.namespace .. "_" .. menu.name
     if data.selected ~= nil then
         MenuData.LastSelectedIndex[menuKey] = data.selected
+        TriggerEvent('cmenu:on_selection_change', menuKey, data.data)
     end
 end)
 
